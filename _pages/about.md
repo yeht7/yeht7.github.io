@@ -6,7 +6,7 @@ permalink: /
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: head2.jpg
   image_circular: false # use a rounded-square profile image
   # more_info: >
   # <p>La Jolla, CA, 92037</p>
@@ -27,7 +27,7 @@ latest_posts:
 
 I am an M.S. student in Computer Engineering at the **University of California, San Diego**, where I am a research intern in Prof. [Yufei Ding](https://yufeiding.ucsd.edu/)'s Lab. My research focuses on **efficient AI infrastructure**, **LLM inference acceleration**, **hardware-software co-design**, and **memory-centric architecture**.
 
-My recent work explores memory-centric architectures for long-context LLM attention, block-level speculative decoding for discrete diffusion language models, and AI-aided chip design benchmarks. I am broadly interested in building full-stack systems across runtime, compiler, architecture, and hardware design to improve the efficiency and reliability of emerging AI workloads.
+My recent work explores memory-centric architectures for long-context LLM attention, token-level speculative decoding for diffusion language models, and AI for chip design benchmarks. More broadly, I aim to build efficient and reliable AI infrastructure by co-designing algorithms, runtime systems, memory architectures, and hardware-aware execution strategies for next-generation AI workloads.
 
 **Email:** [h5ye@ucsd.edu](mailto:h5ye@ucsd.edu)
 

@@ -1,0 +1,403 @@
+---
+# Pixel / CRT theme — modeled after https://kaisermann.me/.
+# Compiled by Jekyll and loaded after main.css so it overrides al-folio defaults.
+---
+@charset "utf-8";
+
+/* ---------- Pixel-bitmap fonts (Google Fonts, free) ---------- */
+@import url("https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap");
+
+/* ---------- Theme tokens ---------- */
+:root,
+html[data-theme="dark"],
+html[data-theme="light"] {
+  --pixel-bg:            #0a0a0a;
+  --pixel-bg-soft:       rgba(0, 0, 0, 0.55);
+  --pixel-fg:            #d6d6d6;
+  --pixel-fg-dim:        #9a9a9a;
+  --pixel-accent:        #ffffff;
+  --pixel-link:          #b7f7c8;
+  --pixel-link-hover:    #ffffff;
+  --pixel-rule:          #2a2a2a;
+  --pixel-border:        #ffffff;
+  --pixel-card-bg:       #111111;
+  --pixel-shadow:        rgba(255, 255, 255, 0.08);
+  --glitchy-blue:        rgba(2, 183, 182, 0.45);
+  --glitchy-red:         rgba(183, 2, 2, 0.45);
+  --pixel-font:          "VT323", "VCR OSD Mono", "Courier New", monospace;
+  --pixel-font-display:  "Press Start 2P", "VT323", monospace;
+  --pixel-font-size:     clamp(18px, 1.5vw, 22px);
+
+  /* Override al-folio globals so existing components inherit the look */
+  --global-bg-color:                var(--pixel-bg);
+  --global-code-bg-color:           #161616;
+  --global-text-color:              var(--pixel-fg);
+  --global-text-color-light:        var(--pixel-fg-dim);
+  --global-theme-color:             var(--pixel-link);
+  --global-hover-color:             var(--pixel-link-hover);
+  --global-hover-text-color:        #000;
+  --global-footer-bg-color:         #050505;
+  --global-footer-text-color:       var(--pixel-fg-dim);
+  --global-footer-link-color:       var(--pixel-link);
+  --global-divider-color:           var(--pixel-rule);
+  --global-card-bg-color:           var(--pixel-card-bg);
+  --global-highlight-color:         #ff6363;
+  --global-newsletter-bg-color:     #111;
+  --global-newsletter-text-color:   var(--pixel-fg);
+  --global-back-to-top-bg-color:    rgba(255, 255, 255, 0.85);
+  --global-back-to-top-text-color:  #000;
+}
+
+/* Force dark scheme regardless of toggle */
+html { color-scheme: dark; }
+
+/* ---------- Reset rounding + crisp pixels ---------- */
+*, *::before, *::after {
+  border-radius: 0 !important;
+  image-rendering: pixelated;
+}
+
+/* ---------- Base typography ---------- */
+html, body {
+  background-color: var(--pixel-bg) !important;
+  color: var(--pixel-fg) !important;
+  font-family: var(--pixel-font) !important;
+  font-size: var(--pixel-font-size) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.02em;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+body {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(255, 255, 255, 0.018) 2px,
+    rgba(255, 255, 255, 0.018) 3px
+  );
+}
+
+body, p, li, span, div, td, th, dd, dt, blockquote, label,
+.nav-link, .navbar-brand, .dropdown-item, .btn, button, input, textarea, select,
+.post-title, .post-description, .desc, .more-info,
+h1, h2, h3, h4, h5, h6, em, strong,
+.font-weight-bold, .font-weight-bold-title, .chinese-name {
+  font-family: var(--pixel-font) !important;
+  font-weight: normal !important;
+}
+
+h1, h2, h3, h4, h5, h6, em, strong, p, li, span, div {
+  color: var(--pixel-fg);
+}
+
+h1, h2, .post-title, .font-weight-bold-title {
+  font-family: var(--pixel-font-display) !important;
+  letter-spacing: 0.04em;
+  line-height: 1.3 !important;
+  color: var(--pixel-accent) !important;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(20px, 2.6vw, 34px) !important; }
+h2 { font-size: clamp(16px, 1.8vw, 22px) !important; margin-top: 1.4em; }
+h3, h4 {
+  font-family: var(--pixel-font) !important;
+  font-size: clamp(20px, 1.6vw, 26px) !important;
+  color: var(--pixel-accent) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.chinese-name {
+  font-family: "Noto Sans Mono CJK SC", "Noto Sans CJK SC", "Microsoft YaHei", monospace !important;
+  letter-spacing: 0.05em;
+}
+
+/* Signature glitchy chromatic-aberration shadow */
+h1, h2, h3, .post-title, .font-weight-bold-title,
+.navbar-brand, .nav-link, .glitchy-text {
+  text-shadow:
+     2px 1px 0 var(--glitchy-blue),
+    -2px -1px 0 var(--glitchy-red);
+}
+
+/* ---------- Links ---------- */
+a, table.table a {
+  color: var(--pixel-link) !important;
+  text-decoration: none !important;
+  position: relative;
+  background-image: linear-gradient(transparent 60%, rgba(183, 247, 200, 0.18) 60%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transition: color 0.15s steps(3), background-color 0.15s steps(3);
+}
+a:hover, a:focus,
+table.table a:hover, table.table a:focus {
+  color: #000 !important;
+  background-color: var(--pixel-link) !important;
+  text-decoration: none !important;
+  outline: none;
+  text-shadow: none;
+}
+
+/* ---------- Selection / scrollbar ---------- */
+::selection { background: #fff; color: #000; text-shadow: none; }
+
+* { scrollbar-width: thin; scrollbar-color: #444 transparent; }
+*::-webkit-scrollbar       { width: 6px; height: 6px; }
+*::-webkit-scrollbar-thumb { background: #444; border: 1px solid #000; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* ---------- Navbar ---------- */
+nav.navbar,
+header nav#navbar {
+  background: var(--pixel-bg) !important;
+  border-bottom: 2px solid var(--pixel-border) !important;
+  box-shadow: 0 4px 0 0 #000;
+  text-transform: uppercase;
+}
+nav.navbar .navbar-brand,
+nav.navbar .nav-link {
+  color: var(--pixel-fg) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 0.75rem !important;
+}
+nav.navbar .navbar-brand:hover,
+nav.navbar .nav-link:hover {
+  color: var(--pixel-accent) !important;
+  background-color: transparent !important;
+}
+nav.navbar .nav-item.active > .nav-link {
+  color: var(--pixel-accent) !important;
+}
+nav.navbar .nav-item.active > .nav-link::before { content: "► "; }
+nav.navbar .navbar-toggler {
+  border: 2px solid var(--pixel-border) !important;
+  padding: 4px 8px;
+}
+nav.navbar .navbar-toggler .icon-bar {
+  background-color: var(--pixel-fg);
+  height: 2px;
+}
+nav.navbar .dropdown-menu {
+  background: var(--pixel-card-bg) !important;
+  border: 2px solid var(--pixel-border) !important;
+  box-shadow: 4px 4px 0 0 #000 !important;
+}
+nav.navbar .dropdown-menu .dropdown-item {
+  color: var(--pixel-fg) !important;
+  text-transform: uppercase;
+}
+nav.navbar .dropdown-menu .dropdown-item:hover,
+nav.navbar .dropdown-menu .dropdown-item.active {
+  background: var(--pixel-link) !important;
+  color: #000 !important;
+}
+
+/* ---------- Profile / About ---------- */
+.profile img {
+  border: 3px solid var(--pixel-border) !important;
+  box-shadow: 6px 6px 0 0 #000, 6px 6px 0 2px var(--pixel-border);
+  filter: contrast(1.05) saturate(0.85);
+  image-rendering: pixelated;
+}
+.about-page .post-title { align-items: center; flex-wrap: wrap; }
+.desc, .more-info { color: var(--pixel-fg-dim) !important; font-size: 0.95em; }
+
+/* ---------- Social icons ---------- */
+.contact-icons a {
+  color: var(--pixel-fg) !important;
+  background-image: none !important;
+  font-size: 1.4em;
+  padding: 4px 6px;
+  border: 2px solid transparent;
+  transition: none;
+}
+.contact-icons a:hover {
+  color: #000 !important;
+  background-color: var(--pixel-link) !important;
+  border-color: var(--pixel-border);
+}
+
+/* ---------- Cards ---------- */
+.card,
+.repo, .repository,
+.news .news-item,
+ul.bibliography li {
+  background: var(--pixel-card-bg) !important;
+  border: 2px solid var(--pixel-border) !important;
+  box-shadow: 4px 4px 0 0 #000 !important;
+  color: var(--pixel-fg) !important;
+}
+.card, .repo { transition: transform 0.1s steps(2), box-shadow 0.1s steps(2); }
+.card:hover, .repo:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 #000 !important;
+}
+.card .card-title, .card .card-text { color: var(--pixel-fg) !important; }
+
+/* ---------- Buttons ---------- */
+.btn, button.btn, input[type="submit"] {
+  background: var(--pixel-card-bg) !important;
+  color: var(--pixel-fg) !important;
+  border: 2px solid var(--pixel-border) !important;
+  box-shadow: 3px 3px 0 0 #000 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 14px !important;
+}
+.btn:hover, .btn:focus {
+  background: var(--pixel-link) !important;
+  color: #000 !important;
+  box-shadow: 5px 5px 0 0 #000 !important;
+  transform: translate(-1px, -1px);
+}
+.btn:active {
+  box-shadow: 1px 1px 0 0 #000 !important;
+  transform: translate(2px, 2px);
+}
+
+/* ---------- Tables ---------- */
+table, .table { color: var(--pixel-fg) !important; border: 2px solid var(--pixel-border) !important; }
+table td, table th, .table td, .table th { border-color: var(--pixel-rule) !important; }
+
+/* ---------- Blockquote / hr ---------- */
+blockquote {
+  background: #111 !important;
+  border-left: 4px solid var(--pixel-link) !important;
+  color: var(--pixel-fg) !important;
+}
+hr { border: none !important; border-top: 2px dashed var(--pixel-rule) !important; margin: 1.5em 0; }
+
+/* ---------- Code ---------- */
+code, pre, .highlight {
+  font-family: var(--pixel-font) !important;
+  background: #0e0e0e !important;
+  color: #cfeed5 !important;
+}
+pre { border: 2px solid var(--pixel-border) !important; padding: 1em !important; box-shadow: 4px 4px 0 0 #000; }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--global-footer-bg-color) !important;
+  color: var(--pixel-fg-dim) !important;
+  border-top: 2px solid var(--pixel-border) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85em;
+}
+footer a { color: var(--pixel-link) !important; background-image: none !important; }
+
+/* ---------- Tags / filter pills ---------- */
+.tag, .badge, .pub-tag, .pub-filter-button {
+  background: var(--pixel-card-bg) !important;
+  border: 2px solid var(--pixel-border) !important;
+  color: var(--pixel-fg) !important;
+  box-shadow: 2px 2px 0 0 #000;
+  text-transform: uppercase;
+  padding: 2px 8px !important;
+}
+.tag:hover, .badge:hover,
+.pub-tag:hover, .pub-filter-button:hover,
+.pub-filter-button.active {
+  background: var(--pixel-link) !important;
+  color: #000 !important;
+}
+
+/* ---------- Back to top ---------- */
+#back-to-top {
+  background: var(--pixel-link) !important;
+  color: #000 !important;
+  border: 2px solid var(--pixel-border) !important;
+  box-shadow: 3px 3px 0 0 #000 !important;
+}
+
+/* ---------- News list ---------- */
+.news .news-item .date {
+  color: var(--pixel-link) !important;
+  text-transform: uppercase;
+}
+
+/* ---------- Tiny pixel-block list bullets ---------- */
+.post ul:not([class]) > li,
+.about-page article ul:not([class]) > li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.4em;
+}
+.post ul:not([class]) > li::before,
+.about-page article ul:not([class]) > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  background: var(--pixel-link);
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+/* ---------- CRT overlay via pseudo-elements (no markup needed) ----------
+ * html::before -> scanlines
+ * html::after  -> vignette
+ * body::before -> moving vline
+ * body::after  -> faint flicker
+ */
+html::before, html::after,
+body::before, body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
+html::before {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.22) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  opacity: 0.55;
+}
+html::after {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+body::before {
+  inset: auto 0 auto 0;
+  height: 120px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.045) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: pixel-vline 9s linear infinite;
+}
+body::after {
+  background: rgba(255, 255, 255, 0.015);
+  animation: pixel-flicker 0.18s steps(2) infinite;
+}
+
+@keyframes pixel-vline {
+  0%   { transform: translateY(-120px); }
+  100% { transform: translateY(105vh); }
+}
+@keyframes pixel-flicker {
+  0%   { opacity: 0.6; }
+  50%  { opacity: 1.0; }
+  100% { opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
+}
