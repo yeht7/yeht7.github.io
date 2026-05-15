@@ -6,7 +6,7 @@ permalink: /
 
 profile:
   align: right
-  image: zhongkai3_profile.jpg
+  image: prof_pic.jpg
   image_circular: false # use a rounded-square profile image
   # more_info: >
   # <p>La Jolla, CA, 92037</p>
@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -25,43 +25,27 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am currently a second-year PhD student in the CSE department of UC San Diego (since 2024), working with Prof.[Yufei Ding](https://sites.google.com/ucsd.edu/yufeiding/people/prof-yufei-ding). Before coming to UCSD, I obtained my master's degree from Institute of Computing Technology, Chinese Academy of Sciences, under the supervision of Prof. [Yunji Chen](https://novel.ict.ac.cn/ychen/). Prior to that, I received my bachelor's degree from Shanghai Jiao Tong University.
+I am an M.S. student in Computer Engineering at the **University of California, San Diego**, where I am a research intern in Prof. [Yufei Ding](https://yufeiding.ucsd.edu/)'s Lab. My research focuses on **efficient AI infrastructure**, **LLM inference acceleration**, **hardware-software co-design**, and **memory-centric architecture**.
 
-My research centers on the co-evolution of LLM and hardware systems: I explore novel architectures and systems to accelerate LLM workloads, while harnessing LLMs to advance chip design. My work lies at the intersection of Computer Architecture, ML Systems, and AI4Chip.
+My recent work explores memory-centric architectures for long-context LLM attention, block-level speculative decoding for discrete diffusion language models, and AI-aided chip design benchmarks. I am broadly interested in building full-stack systems across runtime, compiler, architecture, and hardware design to improve the efficiency and reliability of emerging AI workloads.
 
-Also, shout-out to my roommate Zaifeng, who is an expert in kernels, systems, and "cooking". Check out his [homepage and research](https://panzaifeng.github.io).
-
-<!-- , aimming for efficiently deploying AI algorithms in vareid hardware. -->
-
-**Email:** [zhy055@ucsd.edu](mailto:zhy055@ucsd.edu)
-
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
-<!-- <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br> -->
+**Email:** [h5ye@ucsd.edu](mailto:h5ye@ucsd.edu)
 
 ## Education
 
-- **University of California, San Diego (UCSD)**, 2024 - Present \\
-  Ph.D. student in Computer Science & Engineering \\
-  <!-- Advisor: Prof. [Yufei Ding](https://picassolab.squarespace.com/yufei) -->
-- **University of Chinese Academy of Sciences (UCAS)**, 2021 - 2024 \\
-  M.E. in Computer Technology \\
-  <!-- Advisor: Prof. [Yunji Chen](https://novel.ict.ac.cn/ychen/) -->
-- **Shanghai Jiao Tong University (SJTU)**, 2017 - 2021 \\
-  B.S. in Physics (Zhiyuan Honors Program)
+- **University of California, San Diego (UCSD)**, 2025 - 2027 (expected) \\
+  M.S. in Computer Engineering \\
+  Advisor: Prof. [Yufei Ding](https://yufeiding.ucsd.edu/)
+- **Sun Yat-Sen University (SYSU)**, 2021 - 2025 \\
+  B.E. in Microelectronic Science and Engineering
 
 ## Experience
 
-- **Samsung Semiconductor**, 2025.6 - 2025.9. \\
-  Research Intern, AGI Lab
-- **Cambricon Technologies**, 2022.3 - 2024.3. \\
-  IC Design Intern, Architecture group
+- **Prof. Yufei Ding's Lab, UCSD**, 2025.10 - Present \\
+  Research Intern
+- **Xuanyuan Investment Co., Ltd.**, 2025.06 - 2025.09 \\
+  Quantitative Research Intern
+- **Hichip Semiconductor Co., Ltd.**, 2025.02 - 2025.05 \\
+  Digital Designer Intern
+- **Hardware-Software Co-Design & Parallel Computing Group, SYSU**, 2022.06 - 2023.07 \\
+  Researcher, RISC-V GPGPU Design
