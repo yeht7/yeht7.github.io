@@ -53,16 +53,14 @@
     <!-- JavaScripts -->
     {% include scripts.liquid %}
 
-    <div class="map-container">
-      <script
-        type="text/javascript"
-        id="mapmyvisitors"
-        src="https://mapmyvisitors.com/map.js?cl=f2e6ce&w=a&t&t=tt&d=igZyFSNJH-53Jvw4B55CHtEMuAkHWN2wiYusltJ8IF0&co=2c4f3e&ct=ffffff&cmo=ff0000&cmn=fe6800"
-      ></script>
-    </div>
     {% comment %}
+      Visitor map / pageview counter (MapMyVisitors).
+      Removed the previous owner's tracking ID. To enable your own:
+      sign up at https://mapmyvisitors.com, then paste your widget snippet here, e.g.:
+
       <div class="map-container">
-        <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=f2e6ce&w=500&t=tt&d=igZyFSNJH-53Jvw4B55CHtEMuAkHWN2wiYusltJ8IF0&co=2c4f3e&ct=ffffff&cmo=fe999b&cmn=ef2022'></script>
+        <script type="text/javascript" id="mapmyvisitors"
+          src="https://mapmyvisitors.com/map.js?cl=f2e6ce&w=a&t=tt&d=YOUR_OWN_ID&co=2c4f3e&ct=ffffff"></script>
       </div>
     {% endcomment %}
   </body>
