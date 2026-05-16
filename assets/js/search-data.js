@@ -72,6 +72,13 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/haotian-ye", "_blank");
         },
       },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=uUuyoKsAAAAJ", "_blank");
+        },
+      },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
