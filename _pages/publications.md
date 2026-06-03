@@ -14,9 +14,9 @@ nav_order: 2
 <div class="pub-filter-bar" role="group" aria-label="Filter publications by research area">
   <span class="filter-label">Filter</span>
   <button class="pub-filter-btn active" data-filter="all">All</button>
-  <button class="pub-filter-btn" data-filter="arch-sys-for-ai">
+  <button class="pub-filter-btn" data-filter="llm-inference-accel">
     <span class="filter-dot"></span>
-    Arch/Sys for AI
+    LLM Inference Acceleration
   </button>
   <button class="pub-filter-btn" data-filter="ai-for-chip">
     <span class="filter-dot"></span>

@@ -6,8 +6,8 @@ permalink: /
 
 profile:
   align: right
-  image: head2.jpg
-  image_circular: false # use a rounded-square profile image
+  image: touxiang.jpg
+  image_circular: true # use a rounded-square profile image
   # more_info: >
   # <p>La Jolla, CA, 92037</p>
 
