@@ -21,16 +21,35 @@ module Jekyll
 
       def directory_files_content
         target_path = File.join(directory, '**', '*')
-        Dir[target_path].map{|f| File.read(f) unless File.directory?(f) }.join
+        # Sort so the digest does not depend on the filesystem's traversal order.
+        Dir[target_path].sort.map{|f| File.read(f) unless File.directory?(f) }.join
+      end
+
+      def source_path
+        return nil unless file_name.index('assets/')
+        file_name.slice((file_name.index('assets/')..-1)).sub(/\?.*\z/, '')
       end
 
       def file_content
-        local_file_name = file_name.slice((file_name.index('assets/')..-1))
-        File.read(local_file_name)
+        path = source_path
+        return '' if path.nil?
+        File.file?(path) ? File.read(path) : ''
+      end
+
+      # A .css URL under assets/ is usually generated from a .scss source that is
+      # never written to disk under that name, so hashing the .css path alone
+      # yields the digest of an empty string. Hash the .scss source instead.
+      def stylesheet_content
+        path = source_path
+        return '' if path.nil?
+        [path.sub(/\.css\z/, '.scss'), path].each do |candidate|
+          return File.read(candidate) if File.file?(candidate)
+        end
+        ''
       end
 
       def file_contents
-        is_directory? ? file_content : directory_files_content
+        is_directory? ? file_content : stylesheet_content + directory_files_content
       end
 
       def is_directory?
@@ -43,7 +62,10 @@ module Jekyll
     end
 
     def bust_css_cache(file_name)
-      CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+      # The sass partials live in _sass/ at the repo root, not assets/_sass.
+      # Pointing at the latter globbed zero files, so every stylesheet shipped
+      # the same constant digest and browsers never refetched a changed theme.
+      CacheDigester.new(file_name: file_name, directory: '_sass').digest!
     end
   end
 end

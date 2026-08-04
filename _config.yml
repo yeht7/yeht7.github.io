@@ -14,7 +14,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
   and memory-centric architecture.
 keywords: Haotian Ye, UCSD, UC San Diego, computer engineering, LLM inference, efficient AI, memory-centric architecture, hardware-software co-design, AI4Chip, Yufei Ding, RISC-V, GPGPU
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: head2.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon_gh.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://yeht7.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
