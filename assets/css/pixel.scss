@@ -26,7 +26,7 @@ html[data-theme="light"] {
   --glitchy-red:         rgba(183, 2, 2, 0.45);
   --pixel-font:          "VT323", "VCR OSD Mono", "Courier New", monospace;
   --pixel-font-display:  "Press Start 2P", "VT323", monospace;
-  --pixel-font-size:     clamp(12px, 1vw, 14.667px);
+  --pixel-font-size:     clamp(15px, 1.25vw, 18.333px);
 
   /* Override al-folio globals so existing components inherit the look */
   --global-bg-color:                var(--pixel-bg);
@@ -101,11 +101,11 @@ h1, h2, .post-title, .font-weight-bold-title {
   text-transform: uppercase;
 }
 
-h1 { font-size: clamp(13.333px, 1.733vw, 22.667px) !important; }
-h2 { font-size: clamp(10.667px, 1.2vw, 14.667px) !important; margin-top: 1.4em; }
+h1 { font-size: clamp(16.667px, 2.167vw, 28.333px) !important; }
+h2 { font-size: clamp(13.333px, 1.5vw, 18.333px) !important; margin-top: 1.4em; }
 h3, h4 {
   font-family: var(--pixel-font) !important;
-  font-size: clamp(13.333px, 1.067vw, 17.333px) !important;
+  font-size: clamp(16.667px, 1.333vw, 21.667px) !important;
   color: var(--pixel-accent) !important;
   text-transform: uppercase;
   letter-spacing: 0.06em;

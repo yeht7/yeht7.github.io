@@ -11,13 +11,11 @@ profile:
   # more_info: >
   # <p>La Jolla, CA, 92037</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # papers are rendered inline below, between Education and Experience
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false # news section removed
 
 latest_posts:
   enabled: false
@@ -38,6 +36,12 @@ My recent work explores memory-centric architectures for long-context LLM attent
   Advisor: Prof. [Yufei Ding](https://yufeiding.ucsd.edu/)
 - **Sun Yat-Sen University (SYSU)**, 2021 - 2025 \\
   B.E. in Microelectronic Science and Engineering
+
+## <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+
+{% include selected_papers.liquid %}
+
+<script src="{{ '/assets/js/pub-filter.js' | relative_url }}"></script>
 
 ## Experience
 
