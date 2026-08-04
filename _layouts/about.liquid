@@ -8,7 +8,7 @@ layout: default
       {% comment %} <span>{{ site.middle_name }}</span> {% endcomment %}
       <span class="font-weight-bold-title">{{ site.last_name }}</span>
       {% if page.social %}
-        <span class="contact-icons d-none d-sm-flex align-items-center" style="margin-left: 2em; gap: 0.55rem;">
+        <span class="contact-icons header-contact-icons d-flex align-items-center" style="gap: 0.55rem;">
           {% include social.liquid %}
         </span>
       {% endif %}
@@ -59,14 +59,10 @@ layout: default
       <script src="{{ '/assets/js/pub-filter.js' | relative_url }}"></script>
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
+    {% comment %}
+      The bottom social block is intentionally omitted — the same icons already
+      appear next to the name in the page header above.
+    {% endcomment %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
