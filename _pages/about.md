@@ -23,9 +23,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an M.S. student in Computer Engineering at the **University of California, San Diego**, where I am a research intern in Prof. [Yufei Ding](https://yufeiding.ucsd.edu/)'s Lab. My research focuses on **efficient AI infrastructure**, **LLM inference acceleration**, **hardware-software co-design**, and **memory-centric architecture**.
+I am an M.S. student in Computer Engineering at the **University of California, San Diego**, where I am a research intern in Prof. [Yufei Ding](https://yufeiding.ucsd.edu/)'s Lab. My research focuses on **world model architecture**, **efficient AI infrastructure**, **LLM inference acceleration**, **hardware-software co-design**, and **memory-centric architecture**.
 
-My recent work explores memory-centric architectures for long-context LLM attention, token-level speculative decoding for diffusion language models, and AI for chip design benchmarks. More broadly, I aim to build efficient and reliable AI infrastructure by co-designing algorithms, runtime systems, memory architectures, and hardware-aware execution strategies for next-generation AI workloads.
+My recent work explores reliable agent workflows for improving the efficiency of world model infrastructure, efficient training and inference frameworks for world models co-designed with model teams, memory-centric architectures for long-context LLM attention, token-level speculative decoding for diffusion language models, and AI for chip design benchmarks. More broadly, I aim to build efficient and reliable AI infrastructure by co-designing algorithms, runtime systems, memory architectures, and hardware-aware execution strategies for next-generation AI workloads.
 
 **Email:** [h5ye@ucsd.edu](mailto:h5ye@ucsd.edu)
 
@@ -45,6 +45,8 @@ My recent work explores memory-centric architectures for long-context LLM attent
 
 ## Experience
 
+- **Impossible Inc.**, 2026.06 - 2026.09 \\
+  Research Scientist Intern
 - **Prof. Yufei Ding's Lab, UCSD**, 2025.10 - Present \\
   Research Intern
 - **Xuanyuan Investment Co., Ltd.**, 2025.06 - 2025.09 \\
